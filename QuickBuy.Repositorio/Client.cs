@@ -1,0 +1,16 @@
+﻿using QuickBuy.Dominio.Contratos;
+using QuickBuy.Dominio.Entidades;
+
+namespace QuickBuy.Repositorio.Repositorios
+{
+       public class Client
+    {
+        public Client()
+        {
+            var usuarioRepositorio = new UsuarioRepositorio();
+            var produto = new Produto();
+            var usuario = new Usuario();
+            usuarioRepositorio.Adicionar(usuario);
+        }
+    }
+}

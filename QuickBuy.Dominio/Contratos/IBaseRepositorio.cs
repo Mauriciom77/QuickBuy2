@@ -5,7 +5,7 @@ namespace QuickBuy.Dominio.Contratos
 {
    public interface IBaseRepositorio<TEntity> : IDisposable where TEntity : class
     {
-        void Adcionar(TEntity entity);
+        void Adicionar(TEntity entity);
         TEntity ObterPorId(int id);
         IEnumerable<TEntity> ObterTodos();
         void Atualizar(TEntity entity);
