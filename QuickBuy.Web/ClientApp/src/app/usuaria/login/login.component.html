@@ -1,0 +1,59 @@
+<div class="text-center">
+  <form class="form-signin">
+    <h1 class="h4 mb-2 login">Login do Cliente</h1>
+
+    <label for="inputEmail" class="sr-only">Email</label> <!--o ngModel serve para que possa ser feito a leitura e o envio da informação para o Login.compononet.ts-->
+    <input type="email" id="inputEmail"
+           name="email" placeholder="Informe o seu e-mail"
+           class="form-control mb-2"
+           [ngClass] ="{
+             'is-invalid': email.invalid && (email.dirty || email.touched),
+             'is-valid': email.valid && (email.dirty || email.touched)
+           }"
+           [(ngModel)]="usuario.email"
+           #email="ngModel"
+           email
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors.required">
+        E-mail deve ser preenchido
+      </div>
+      <div *ngIf="email.errors.email">
+        E-mail informado incorretamente
+      </div>
+    </div>
+    
+    <label for="inputSenha" class="sr-only">Senha</label>
+    <input type="password" id="inputSenha"
+           name="senha" placeholder="Senha"
+           class="form-control mb-2"
+            [ngClass] ="{
+             'is-invalid': senha.invalid && (senha.dirty || senha.touched),
+             'is-valid': senha.valid && (senha.dirty || senha.touched)
+           }"
+           [(ngModel)]="usuario.senha"
+           #senha ="ngModel"
+           required/>
+
+    <div class="invalid-feedback mb-2" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+      <div *ngIf="senha.errors.required">
+        Senha deve ser preenchida
+      </div>
+    </div>
+
+
+
+    <button class="btn btn-primary btn-block" type="submit" (click)="entrar()">Entrar</button>
+
+    <img src="../../../assets/img/quicky.jpg" style="margin-top: auto" />
+
+
+    <!--<div class="alert alert-primary" role="alert" *ngIf="usuarioAutenticado">
+      <!--*ngif + o nome da variavel do login.componet pega a condição informada e aplica na tela se for verdadeiro-->
+    <!--Usuário Autenticado!!
+</div>-->
+
+  </form>
+
+</div>
